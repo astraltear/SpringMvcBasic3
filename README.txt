@@ -52,3 +52,5 @@ spring-webmvc 4.2.2.RELEASE
 	'*.'로 시작하는 url-pattern은 확장자에 대한 매핑을 할 때 사용된다.
 	"/"만 정의한 경우 디폴트 서블릿을 의미한다.
 	나머지 다른 문자열을 정확한 매핑을 위해서 사용된다.
+	
+	<default-servlet-handler/>
