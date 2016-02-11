@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	first
+	first: get method는 csrf가 작동하지 않는다. 
 	<ul>
 		<li><a href="<c:url value="/users/auth/second"/>">second</a></li>
 
 	</ul>
 
-	<form action="<c:url value="/users/auth/second"/>" method="post">
+	<form action="<c:url value="/users/auth/second"/>" method="get">
 		<input type="text" name="${_csrf.parameterName}" value="${_csrf.token}" /> <input type="submit" value="check" />
 	</form>
 
