@@ -8,16 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-first
+third
 	<ul>
-		<li><a href="<c:url value="/users/auth/second"/>">second</a></li>
-		
+		<li><a href="<c:url value="/users/auth/first"/>">first</a></li>
 	</ul>
-	
-	<form action="<c:url value="/users/auth/second"/>" method="post">
-		<input type="text" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	<input type="submit" value="check" /> 
-	</form>	
 	
 </body>
 </html>
