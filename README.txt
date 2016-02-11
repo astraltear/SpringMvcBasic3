@@ -43,3 +43,8 @@ spring-webmvc 4.2.2.RELEASE
 			<filter-name>csrfFilter</filter-name>
 			<url-pattern>/auth/*</url-pattern>
 		</filter-mapping>
+		
+## web.xml url-pattern
+	'/'로 시작하고 '/*'로 끝나는 url-pattern은 경로 매핑을 위해서 사용된다.
+	'*.'로 시작하는 url-pattern은 확장자에 대한 매핑을 할 때 사용된다.
+	나머지 다른 문자열을 정확한 매핑을 위해서 사용된다.

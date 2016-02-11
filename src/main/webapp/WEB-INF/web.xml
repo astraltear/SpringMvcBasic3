@@ -31,7 +31,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>csrfFilter</filter-name>
-		<url-pattern>/users/*</url-pattern>
+		<url-pattern>/users/auth/*</url-pattern>
 	</filter-mapping>
 
 

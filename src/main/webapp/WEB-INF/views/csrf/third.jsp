@@ -12,9 +12,5 @@
 		<li><a href="<c:url value="/"/>">init</a></li>
 	</ul>
 
-	<form action="<c:url value="/"/>" method="post">
-		<input type="text" name="${_csrf.parameterName}" value="${_csrf.token}" /> <input type="submit" value="check" />
-	</form>
-
 </body>
 </html>
