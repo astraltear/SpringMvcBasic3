@@ -22,22 +22,39 @@ public class HiddenHttpMethodTestController {
 		return "home";
 	}
 	
-	@RequestMapping(value="/httpmethodTest", method=RequestMethod.POST)
+	@RequestMapping(value="/methodfilter/httpmethodTest", method=RequestMethod.POST)
 	@ResponseBody
 	public String postMethod() {
 		return "call post method";
 	}
 	
-	@RequestMapping(value="/httpmethodTest", method=RequestMethod.PUT)
+	@RequestMapping(value="/methodfilter/httpmethodTest", method=RequestMethod.PUT)
 	@ResponseBody
 	public String putMehtod() {
 		return "call put method";
 	}
 	
-	@RequestMapping(value="/httpmethodTest", method=RequestMethod.DELETE)
+	@RequestMapping(value="/methodfilter/httpmethodTest", method=RequestMethod.DELETE)
 	@ResponseBody
 	public String deleteMehtod() {
 		return "call delete method";
 	}
 	
+	@RequestMapping(value="/NonMethodfilter/httpmethodTest", method=RequestMethod.POST)
+	@ResponseBody
+	public String NonpostMethod() {
+		return "call Non post method";
+	}
+	
+	@RequestMapping(value="/NonMethodfilter/httpmethodTest", method=RequestMethod.PUT)
+	@ResponseBody
+	public String NonputMehtod() {
+		return "call Non put method";
+	}
+	
+	@RequestMapping(value="/NonMethodfilter/httpmethodTest", method=RequestMethod.DELETE)
+	@ResponseBody
+	public String NondeleteMehtod() {
+		return "call Non delete method";
+	}	
 }
