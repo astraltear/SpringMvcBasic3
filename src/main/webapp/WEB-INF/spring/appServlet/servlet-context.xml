@@ -28,12 +28,11 @@
 			<mapping path="/interceptorLogin/board_write" />
 			<beans:bean class="com.astraltear.springmvcbasic3.interceptor.BoardInterCeptor" />
 		</interceptor>
-		<!-- 추가로 여러개의 인터셉터 설정 가능 
-		<interceptor> 
-			<mapping path="/admin/board_write"/> 
-				<bean class="com.spring.interceptor.AdminInterCeptor"/> 
+		<interceptor>
+			<mapping path="/bothInterceptor/**"/>
+			<exclude-mapping path="/anotherInterceptor/**"/>
+			<beans:bean class="com.astraltear.springmvcbasic3.interceptor.IncludeExcludeInterceptor"/>
 		</interceptor>
-		 -->
 	</interceptors>
 
 </beans:beans>

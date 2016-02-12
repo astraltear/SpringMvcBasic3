@@ -11,8 +11,8 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.astraltear.springsitemesh">
-		<level value="info" />
+	<logger name="com.astraltear.springmvcbasic3">
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

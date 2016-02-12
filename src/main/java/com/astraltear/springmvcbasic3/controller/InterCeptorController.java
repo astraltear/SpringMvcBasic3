@@ -24,4 +24,5 @@ public class InterCeptorController {
 		request.getSession().setAttribute("logininfo", true);
 	}
 	
+	
 }

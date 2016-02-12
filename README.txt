@@ -62,6 +62,9 @@ interceptor
 	<default-servlet-handler/>
 	
 ## login interceptor demo
+	preHandle : Controller 가 수행되기 전에 실행됩니다. 여기서는 이후 Controller를 수행할지 여부를 boolean 으로 return 하게 됩니다.
+	postHandle : Controller 가 수행된후 View 를 호출하기 전 상태입니다.
+	afterCompletion : View 작업까지 완료된 후 호출 됩니다. responseBody 를 이용할 경우 UI 에 이미 값을 전달후 해당 부분이 호출됩니다.
 
 	<interceptors>
 		<interceptor>
@@ -76,10 +79,14 @@ interceptor
 		 -->
 	</interceptors>
 	
-  테스트 방법
-    호출 /SpringMvcBasic3/interceptorLogin/board_write  
-    결과 /SpringMvcBasic3/interceptorLogin/login 컨트롤러 페이지로 가는지확인
-  
-   호출 /SpringMvcBasic3/interceptorLogin/setSession  
-   결과 /SpringMvcBasic3/interceptorLogin/board_write    
-	
+	  테스트 방법
+	  호출 /SpringMvcBasic3/interceptorLogin/board_write  
+	  결과 /SpringMvcBasic3/interceptorLogin/login 컨트롤러 페이지로 가는지확인
+	  
+	  호출 /SpringMvcBasic3/interceptorLogin/setSession  
+	  결과 /SpringMvcBasic3/interceptorLogin/board_write    
+	  
+## interceptor with annotaion
+	/bothInterceptor/logging는 로깅 인터셉터를 수행시키고 /bothInterceptor/noLogging 는 로깅 인터셉터를 수행 안함
+	물론 exclude-mapping을 여러개 등록하면 되지만 로그인이 필요하지 않은 컨트롤러가 생길때마다 exclude-mapping을 선언
+	임의의 어노테이션을 생성하여 로깅이 필요한  컨트롤러의 메소드에 어노테이션을 붙이고, 어노테이션 유무를 인터셉터에서 확인
