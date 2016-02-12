@@ -19,7 +19,7 @@ public class InterCeptorController {
 		return "interceptor/board_write";
 	}
 	
-	@RequestMapping(value="/loginCheck")
+	@RequestMapping(value="/setSession")
 	public void loginCheck(HttpServletRequest request) {
 		request.getSession().setAttribute("logininfo", true);
 	}

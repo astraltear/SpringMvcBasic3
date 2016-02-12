@@ -10,7 +10,7 @@ public class BoardInterCeptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		try {
 			if(request.getSession().getAttribute("logininfo") == null) {
-				response.sendRedirect("/interceptorLogin/login");
+				response.sendRedirect("/SpringMvcBasic3/interceptorLogin/login");
 				return false;
 			}
 		} catch (Exception e) {

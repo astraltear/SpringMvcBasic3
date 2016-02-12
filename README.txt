@@ -76,3 +76,10 @@ interceptor
 		 -->
 	</interceptors>
 	
+  테스트 방법
+    호출 /SpringMvcBasic3/interceptorLogin/board_write  
+    결과 /SpringMvcBasic3/interceptorLogin/login 컨트롤러 페이지로 가는지확인
+  
+   호출 /SpringMvcBasic3/interceptorLogin/setSession  
+   결과 /SpringMvcBasic3/interceptorLogin/board_write    
+	
