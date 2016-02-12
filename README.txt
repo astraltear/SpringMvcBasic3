@@ -3,6 +3,7 @@ spring-webmvc 4.2.2.RELEASE
 HiddenHttpMethod
 CSRF Filter
 interceptor
+sitemesh
 
 
 ##Hidden Http Method
@@ -90,3 +91,25 @@ interceptor
 	/bothInterceptor/logging는 로깅 인터셉터를 수행시키고 /bothInterceptor/noLogging 는 로깅 인터셉터를 수행 안함
 	물론 exclude-mapping을 여러개 등록하면 되지만 로그인이 필요하지 않은 컨트롤러가 생길때마다 exclude-mapping을 선언
 	임의의 어노테이션을 생성하여 로깅이 필요한  컨트롤러의 메소드에 어노테이션을 붙이고, 어노테이션 유무를 인터셉터에서 확인
+	
+## sitemesh
+	<dependency>
+		<groupId>opensymphony</groupId>
+		<artifactId>sitemesh</artifactId>
+		<version>2.4.2</version>
+	</dependency>
+		
+		
+	<!-- sitemesh filter -->
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/sitemeshlayout/*</url-pattern>
+	</filter-mapping>
+	
+	WEB-INF/decorators.xml
+	WEB-INF/sitemesh.xml
