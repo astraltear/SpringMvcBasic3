@@ -1,5 +1,8 @@
 spring-webmvc 4.2.2.RELEASE
 
+HiddenHttpMethod
+CSRF Filter
+
 ##Hidden Http Method
 	<filter>
 		<filter-name>httpMethodFilter</filter-name>
