@@ -1,4 +1,4 @@
-package com.astraltear.springsitemesh.controller;
+package com.astraltear.springmvcbasic3.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

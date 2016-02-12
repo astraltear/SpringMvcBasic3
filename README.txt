@@ -2,6 +2,8 @@ spring-webmvc 4.2.2.RELEASE
 
 HiddenHttpMethod
 CSRF Filter
+interceptor
+
 
 ##Hidden Http Method
 	<filter>
@@ -21,8 +23,7 @@ CSRF Filter
 
 	
 ## CSRF FILTER
-		GET, HEAD, TRACE, OPTIONS ¸Ş¼Òµå ÀÏ ¶§¿¡´Â µ¿ÀÛÇÏÁö ¾Ê½À´Ï´Ù.
-		csrfÀÚÃ¼°¡ µ¥ÀÌÅ¸°¡ º¯°æµÉ ¶§ ¹ß»ıÇÏ´Â ¹®Á¦¸¦ ¿¹¹æÇÏ´Â ÇüÅÂÀÌ±â ¶§¹®¿¡ get¸Ş¼Òµå´Â Á¶È¸ ÇüÅÂ·Î »ı°¢ÇÏ±â ¶§¹®¿¡ ¹«½ÃÇÕ´Ï´Ù.
+		GET, HEAD, TRACE, OPTIONS ëŠ” CSRFí•„í„°ê°€ ì ìš©ë˜ì§€ ì•ŠëŠ”ë‹¤. 
 		<!-- Security (used for CSRF protection only) -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -51,9 +52,27 @@ CSRF Filter
 		
 ## web.xml url-pattern
 	http://jinwooe.blogspot.kr/2014/05/servlet-mapping-url-pattern-vs.html
-	'/'·Î ½ÃÀÛÇÏ°í '/*'·Î ³¡³ª´Â url-patternÀº °æ·Î ¸ÅÇÎÀ» À§ÇØ¼­ »ç¿ëµÈ´Ù.
-	'*.'·Î ½ÃÀÛÇÏ´Â url-patternÀº È®ÀåÀÚ¿¡ ´ëÇÑ ¸ÅÇÎÀ» ÇÒ ¶§ »ç¿ëµÈ´Ù.
-	"/"¸¸ Á¤ÀÇÇÑ °æ¿ì µğÆúÆ® ¼­ºí¸´À» ÀÇ¹ÌÇÑ´Ù.
-	³ª¸ÓÁö ´Ù¸¥ ¹®ÀÚ¿­À» Á¤È®ÇÑ ¸ÅÇÎÀ» À§ÇØ¼­ »ç¿ëµÈ´Ù.
+	'/' ë¡œ ì‹œì‘í•´ì„œ '/*'ë¡œ ëë‚˜ëŠ” ë¬¸ìì—´ì„ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+	'*'.prefix í˜•íƒœì˜ í™•ì¥ìë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+	ë¹ˆ ë¬¸ìì—´("")ì€ íŠ¹ë³„í•œ URL íŒ¨í„´ì¸ë° applicationì˜ context rootì— ë§¤í•‘ì´ ë©ë‹ˆë‹¤. 
+	ì˜ˆë¥¼ ë“¤ë©´ "http://host:port/<contextroot>/ì— ë§¤í•‘ì´ ë˜ê³ , path infoëŠ” '/' ë©ë‹ˆë‹¤. ì´ ë•Œ servlet pathì™€ context pathëŠ” ë¹ˆ ë¬¸ìì—´("")ì´ ë©ë‹ˆë‹¤.
+	'/' ë§Œ ìˆëŠ” ë¬¸ìì—´ì€ default servletì„ ì˜ë¯¸í•©ë‹ˆë‹¤. ì´ ë•Œ servlet pathëŠ” request URIì—ì„œ context pathë¥¼ ì œì™¸í•œ ë¬¸ìì—´ì´ ë˜ê³  path infoëŠ” null ì…ë‹ˆë‹¤.
+	url-patternì— ì˜í•´ ì—¬ëŸ¬ê°œì˜ servletì´ ë§¤í•‘ì´ ë˜ë©´ deployê°€ ì‹¤íŒ¨í•´ì•¼ í•©ë‹ˆë‹¤.
 	
 	<default-servlet-handler/>
+	
+## login interceptor demo
+
+	<interceptors>
+		<interceptor>
+			<mapping path="/interceptorLogin/board_write" />
+			<beans:bean class="com.astraltear.springmvcbasic3.interceptor.BoardInterCeptor" />
+		</interceptor>
+		<!-- ì¶”ê°€ë¡œ ì—¬ëŸ¬ê°œì˜ ì¸í„°ì…‰í„° ì„¤ì • ê°€ëŠ¥ 
+		<interceptor> 
+			<mapping path="/admin/board_write"/> 
+				<bean class="com.spring.interceptor.AdminInterCeptor"/> 
+		</interceptor>
+		 -->
+	</interceptors>
+	
