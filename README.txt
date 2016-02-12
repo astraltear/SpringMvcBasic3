@@ -113,3 +113,7 @@ sitemesh
 	
 	WEB-INF/decorators.xml
 	WEB-INF/sitemesh.xml
+	
+## view-controller
+	<view-controller path="/account/registration_ok.html" view-name="users/registrationOk" />
+	
