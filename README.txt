@@ -117,3 +117,11 @@ sitemesh
 ## view-controller
 	<view-controller path="/account/registration_ok.html" view-name="users/registrationOk" />
 	
+## bean에서 RequestMapping하기
+	<context:component-scan base-package="com.astraltear.springmvcbasic3" /> 부분 주석
+	
+	spring xml 파일에 bean을 직접 등록한다.
+	Controller에는 RequestMapping을 설정하지 않는다. 
+	<beans:bean name="/nominee/*"
+		class="com.astraltear.springmvcbasic3.controller.NomineeController"
+		p:thanksViewName="nominee/thanks"/>
