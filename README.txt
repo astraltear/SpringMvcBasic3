@@ -125,3 +125,11 @@ sitemesh
 	<beans:bean name="/nominee/*"
 		class="com.astraltear.springmvcbasic3.controller.NomineeController"
 		p:thanksViewName="nominee/thanks"/>
+
+## property source 얻기
+	@PropertySource("classpath:config.properties")
+	
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
+		return new PropertySourcesPlaceholderConfigurer();
+	}
